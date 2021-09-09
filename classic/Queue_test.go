@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func checkNilNodes(node *Node, t *testing.T) {
+func checkNodes(node *Node, t *testing.T) {
 	if node != nil {
 		t.Error("Expected:", nil, "Got:", node)
 	} else {
@@ -16,16 +16,16 @@ func TestCreateQueue(t *testing.T) {
 	queue := CreateQueue()
 
 	if queue.IsEmpty() != 0 {
-		t.Error("Expected:", 0, "Got:", queue.IsEmpty())
+		t.Error("Expected:", 0, "Got:", queue.Size())
 	} else {
-		t.Log("Success")
+		t.Log("Success on create a queue")
 	}
 
 	frontal, _ := queue.Frontal()
 	back, _ := queue.Back()
 
-	checkNilNodes(frontal, t)
-	checkNilNodes(back, t)
+	checkNodes(frontal, t)
+	checkNodes(back, t)
 }
 
 func TestEnqueue(t *testing.T) {
