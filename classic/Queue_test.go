@@ -1,0 +1,81 @@
+package classic
+
+import (
+	"testing"
+)
+
+func checkNilNodes(node *Node, t *testing.T) {
+	if node != nil {
+		t.Error("Expected:", nil, "Got:", node)
+	} else {
+		t.Log("Success")
+	}
+}
+
+func TestCreateQueue(t *testing.T) {
+	queue := CreateQueue()
+
+	if queue.IsEmpty() != 0 {
+		t.Error("Expected:", 0, "Got:", queue.IsEmpty())
+	} else {
+		t.Log("Success")
+	}
+
+	frontal, _ := queue.Frontal()
+	back, _ := queue.Back()
+
+	checkNilNodes(frontal, t)
+	checkNilNodes(back, t)
+}
+
+func TestEnqueue(t *testing.T) {
+	queue := CreateQueue()
+	setNumbers := []int{10, 19, 72, 84, 110, 192}
+
+	for i := 0; i < len(setNumbers); i++ {
+		queue.Enqueue(setNumbers[i])
+	}
+
+	front, _ := queue.Frontal()
+	back, _ := queue.Back()
+
+	if front.Key != 10 {
+		t.Error("Expected:", setNumbers[0], "got:", front.Key)
+	} else {
+		t.Log("Success on enqueue!")
+	}
+
+	if back.Key != 192 {
+		t.Error("Expected:", setNumbers[5], "got:", back.Key)
+	} else {
+		t.Log("Success on enqueue!")
+	}
+}
+
+func TestDequeue(t *testing.T) {
+	queue := CreateQueue()
+
+	setNumbers := []int{33, 74, 195, 157, 133, 1024}
+	for i := 0; i < len(setNumbers); i++ {
+		queue.Enqueue(setNumbers[i])
+	}
+
+	queue.Dequeue()
+	queue.Dequeue()
+	queue.Dequeue()
+
+	front, _ := queue.Frontal()
+	back, _ := queue.Back()
+
+	if front.Key != setNumbers[3] {
+		t.Error("Expected:", setNumbers[3], "got:", front.Key)
+	} else {
+		t.Log("Success on dequeue!")
+	}
+
+	if back.Key != setNumbers[5] {
+		t.Error("Expected:", setNumbers[5], "got:", back.Key)
+	} else {
+		t.Log("Success on dequeue!")
+	}
+}
