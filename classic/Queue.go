@@ -54,7 +54,7 @@ func (q *Queue) Back() (*Node, error) {
 }
 
 func (q *Queue) Enqueue(value int) {
-	node := &Node{Key: value}
+	node := &Node{Key: value, next: nil}
 
 	if q.length == 0 || q.front == nil {
 		q.front = node
@@ -73,6 +73,7 @@ func (q *Queue) Dequeue() (*Node, error) {
 	} else {
 		temp := q.front
 		q.front = q.front.next
+		q.length = q.length - 1
 		return temp, nil
 	}
 }
