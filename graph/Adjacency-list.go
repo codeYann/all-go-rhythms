@@ -20,3 +20,7 @@ func (g *Graph) Append(a, b int) {
 func (d *Graph) AppendDigraph(a, b int) {
 	d.Vertices[a] = append(d.Vertices[a], b)
 }
+
+func (g *Graph) GetVerticesNumbers() int {
+	return len(g.Vertices)
+}
