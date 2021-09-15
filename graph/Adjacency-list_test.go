@@ -43,3 +43,35 @@ func TestAppendDigraph(t *testing.T) {
 		t.Log("Success on add edges in Digraph")
 	}
 }
+
+func TestGetVerticesNumbers(t *testing.T) {
+	G := CreateGraph()
+	numbers := []int{2, 4, 8, 16, 32, 64}
+
+	for i := 0; i < len(numbers)-1; i++ {
+		G.Append(numbers[i], numbers[i+1])
+	}
+
+	if G.GetVerticesNumbers() != 6 {
+		t.Error("Expected:", 6, "Got:", G.GetAllVertices())
+	} else {
+		t.Log("Success")
+	}
+}
+
+func TestGetAllVertices(t *testing.T) {
+	G := CreateGraph()
+	numbers := []int{2, 4, 8, 16, 32, 64}
+
+	for i := 0; i < len(numbers)-1; i++ {
+		G.Append(numbers[i], numbers[i+1])
+	}
+
+	values := G.GetAllVertices()
+
+	if len(values) != 6 {
+		t.Error("Expected:", len(values), "Got:", len(values))
+	} else {
+		t.Log("Success")
+	}
+}
