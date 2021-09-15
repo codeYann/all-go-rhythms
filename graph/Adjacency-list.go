@@ -24,3 +24,13 @@ func (d *Graph) AppendDigraph(a, b int) {
 func (g *Graph) GetVerticesNumbers() int {
 	return len(g.Vertices)
 }
+
+func (g *Graph) GetAllVertices() []int {
+	allVertices := make([]int, 0)
+
+	for index, _ := range g.Vertices {
+		allVertices = append(allVertices, index)
+	}
+
+	return allVertices
+}
