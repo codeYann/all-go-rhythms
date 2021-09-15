@@ -19,6 +19,7 @@ O projeto consiste em um grande "banco de dados" de implementações de algoritm
 | Nome                                                                                             | Status |
 | ------------------------------------------------------------------------------------------------ | ------ |
 | [Lista Adjacência](https://github.com/codeYann/all-go-rhythms/blob/main/graph/Adjacency-list.go) | Ok     |
+| [DFS](https://github.com/codeYann/all-go-rhythms/blob/main/graph/DFS.go)                         | Ok     |
 
 ## License
 
