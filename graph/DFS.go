@@ -43,7 +43,7 @@ func DFS(g *Graph) *GraphInfo {
 		infos.F = append(infos.F, 0)
 	}
 
-	for v, _ := range g.Vertices {
+	for v := range g.GetAllVertices() {
 		if infos.colors[v] == "B" {
 			DFS_VISIT(g.Vertices, v, &mark, infos)
 		}
