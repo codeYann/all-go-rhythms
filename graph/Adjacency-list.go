@@ -28,7 +28,7 @@ func (g *Graph) GetVerticesNumbers() int {
 func (g *Graph) GetAllVertices() []int {
 	allVertices := make([]int, 0)
 
-	for index, _ := range g.Vertices {
+	for index := range g.Vertices {
 		allVertices = append(allVertices, index)
 	}
 
