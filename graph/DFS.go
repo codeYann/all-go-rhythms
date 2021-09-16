@@ -2,7 +2,7 @@ package graph
 
 import "fmt"
 
-type GraphInfo struct {
+type graphInfo struct {
 	colors []string
 	D      []int
 	F      []int
@@ -10,7 +10,7 @@ type GraphInfo struct {
 
 var mark int = 0
 
-func DFS_VISIT(lista_adj map[int][]int, vertice int, markPointer *int, infos *GraphInfo) {
+func DFS_VISIT(lista_adj map[int][]int, vertice int, markPointer *int, infos *graphInfo) {
 	fmt.Println(vertice)
 	*markPointer += 1
 
@@ -22,16 +22,17 @@ func DFS_VISIT(lista_adj map[int][]int, vertice int, markPointer *int, infos *Gr
 			DFS_VISIT(lista_adj, u, markPointer, infos)
 		}
 	}
+
 	*markPointer += 1
 	infos.F[vertice] = *markPointer
 	infos.colors[vertice] = "P"
 }
 
-func DFS(g *Graph) *GraphInfo {
+func DFS(g *Graph) *graphInfo {
 	markValue := &mark
 	*markValue = 0
 
-	infos := &GraphInfo{
+	infos := &graphInfo{
 		colors: make([]string, 0),
 		D:      make([]int, 0),
 		F:      make([]int, 0),
