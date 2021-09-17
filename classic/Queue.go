@@ -2,12 +2,6 @@ package classic
 
 import "errors"
 
-// Node's definition
-type Node struct {
-	Key  int
-	next *Node
-}
-
 // Queue's definition
 type Queue struct {
 	front  *Node
