@@ -8,11 +8,12 @@ O projeto consiste em um grande "banco de dados" de implementações de algoritm
 
 ### Classic
 
-| Nome                                                                           | Status |
-| ------------------------------------------------------------------------------ | ------ |
-| [Fila](https://github.com/codeYann/all-go-rhythms/tree/main/classic/Queue.go)  | Ok     |
-| [Pilha](https://github.com/codeYann/all-go-rhythms/tree/main/classic/Stack.go) | OK     |
-| [ABB](https://github.com/codeYann/all-go-rhythms/blob/main/classic/Bst.go)     | Ok     |
+| Nome                                                                                          | Status |
+| --------------------------------------------------------------------------------------------- | ------ |
+| [Lista Encadeada](https://github.com/codeYann/all-go-rhythms/tree/main/classic/LinkedList.go) | Ok     |
+| [Fila](https://github.com/codeYann/all-go-rhythms/tree/main/classic/Queue.go)                 | Ok     |
+| [Pilha](https://github.com/codeYann/all-go-rhythms/tree/main/classic/Stack.go)                | OK     |
+| [ABB](https://github.com/codeYann/all-go-rhythms/blob/main/classic/Bst.go)                    | Ok     |
 
 ### Grafos
 
@@ -20,6 +21,13 @@ O projeto consiste em um grande "banco de dados" de implementações de algoritm
 | ------------------------------------------------------------------------------------------------ | ------ |
 | [Lista Adjacência](https://github.com/codeYann/all-go-rhythms/blob/main/graph/Adjacency-list.go) | Ok     |
 | [DFS](https://github.com/codeYann/all-go-rhythms/blob/main/graph/DFS.go)                         | Ok     |
+
+### Ordenação
+
+| Nome                                                                                             | Status |
+| ------------------------------------------------------------------------------------------------ | ------ |
+| [Insertion Sort](https://github.com/codeYann/all-go-rhythms/blob/main/sorting/Insertion-sort.go) | Ok     |
+| [Bubble Sort](https://github.com/codeYann/all-go-rhythms/blob/main/sorting/BubbleSort.go)        | Ok     |
 
 ## License
 
