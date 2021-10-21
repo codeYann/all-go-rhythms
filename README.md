@@ -1,4 +1,4 @@
-# all-go-rhythms :book: :computer: :surfer:
+# all-go-rhythms :book: :computer: :surfer
 
 ## Descrição do projeto
 
@@ -14,6 +14,7 @@ O projeto consiste em um grande "banco de dados" de implementações de algoritm
 | [Fila](https://github.com/codeYann/all-go-rhythms/tree/main/classic/Queue.go)                 | Ok     |
 | [Pilha](https://github.com/codeYann/all-go-rhythms/tree/main/classic/Stack.go)                | OK     |
 | [ABB](https://github.com/codeYann/all-go-rhythms/blob/main/classic/Bst.go)                    | Ok     |
+| [Heap](https://github.com/codeYann/all-go-rhythms/blob/main/classic/Heap.go)                    | Ok     |
 
 ### Grafos
 
