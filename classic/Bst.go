@@ -43,7 +43,7 @@ func (tree *Tree) findRecTree(node *Node_Tree, key int) *Node_Tree {
 
 func (tree *Tree) Find(key int) (*Node_Tree, error) {
 	if tree.Root == nil {
-		return nil, errors.New("Tree is empty!")
+		return nil, errors.New("tree is empty")
 	}
 
 	response := tree.findRecTree(tree.Root, key)
