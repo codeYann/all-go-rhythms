@@ -63,7 +63,7 @@ func (l *LinkedList) AddFront(value int) {
 
 func (l *LinkedList) RemoveBack() (*Node, error) {
 	if l.head == nil || l.tail == nil {
-		return nil, errors.New("List is empty!")
+		return nil, errors.New("list is empty")
 	} else {
 		temp := l.head
 		removedNode := l.tail
@@ -84,7 +84,7 @@ func (l *LinkedList) RemoveBack() (*Node, error) {
 
 func (l *LinkedList) RemoveFront() (*Node, error) {
 	if l.head == nil || l.tail == nil {
-		return nil, errors.New("List is empty")
+		return nil, errors.New("list is empty")
 	} else {
 		temp := l.head
 		l.head = l.head.next
