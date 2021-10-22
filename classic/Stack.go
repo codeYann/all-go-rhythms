@@ -45,7 +45,7 @@ func (s *Stack) Push(value int) {
 
 func (s *Stack) Pop() (*Node, error) {
 	if s.IsEmpty() == 0 || s.top == nil {
-		return nil, errors.New("Stack is empty!")
+		return nil, errors.New("stack is empty")
 	} else {
 		temp := s.top
 		s.top = s.top.next
