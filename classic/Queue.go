@@ -63,7 +63,7 @@ func (q *Queue) Enqueue(value int) {
 
 func (q *Queue) Dequeue() (*Node, error) {
 	if q.length == 0 || q.front == nil {
-		return nil, errors.New("Queue is empty!")
+		return nil, errors.New("queue is empty")
 	} else {
 		temp := q.front
 		q.front = q.front.next
