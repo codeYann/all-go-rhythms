@@ -29,3 +29,23 @@ func TestInsertMaxHeap(t *testing.T) {
 		t.Error("Expected:", 177, "Got:", heap.GetElements()[0])
 	}
 }
+
+func TestInsertMaxDownPop(t *testing.T) {
+	heap := H.CreateMaxHeap()
+	heap.Insert(100)
+	heap.Insert(80)
+	heap.Insert(90)
+	heap.Insert(65)
+	heap.Insert(70)
+	heap.Insert(15)
+	heap.Insert(20)
+	s := heap.Pop()
+
+	if s != 100 {
+		t.Error("Expected:", 100, "got:", s)
+	}
+
+	if heap.GetElements()[0] != 90 {
+		t.Error("Expected:", 90, "Got", heap.GetElements()[0])
+	}
+}
