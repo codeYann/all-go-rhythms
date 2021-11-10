@@ -14,7 +14,7 @@ O projeto consiste em um grande "banco de dados" de implementações de algoritm
 | [Fila](https://github.com/codeYann/all-go-rhythms/tree/main/classic/Queue.go)                 | Ok     |
 | [Pilha](https://github.com/codeYann/all-go-rhythms/tree/main/classic/Stack.go)                | OK     |
 | [ABB](https://github.com/codeYann/all-go-rhythms/blob/main/classic/Bst.go)                    | Ok     |
-| [Heap](https://github.com/codeYann/all-go-rhythms/blob/main/classic/Heap.go)                    | Ok     |
+| [Heap](https://github.com/codeYann/all-go-rhythms/blob/main/classic/Heap.go)                  | Ok     |
 
 ### Grafos
 
@@ -29,6 +29,9 @@ O projeto consiste em um grande "banco de dados" de implementações de algoritm
 | ------------------------------------------------------------------------------------------------ | ------ |
 | [Insertion Sort](https://github.com/codeYann/all-go-rhythms/blob/main/sorting/Insertion-sort.go) | Ok     |
 | [Bubble Sort](https://github.com/codeYann/all-go-rhythms/blob/main/sorting/BubbleSort.go)        | Ok     |
+| [Counting Sort](https://github.com/codeYann/all-go-rhythms/blob/main/sorting/Counting-sort.go)   | Ok     |
+
+|
 
 ## License
 
