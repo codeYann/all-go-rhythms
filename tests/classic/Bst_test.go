@@ -9,35 +9,25 @@ import (
 func TestCreateBst(t *testing.T) {
 	bst := BST.CreateTree()
 
-	if bst.Root != nil {
-		t.Error("Expected:", nil, "Got:", bst.Root)
+	if bst.GetRoot() != nil {
+		t.Error("Expected:", nil, "Got:", bst.GetRoot())
 	} else {
 		t.Log("Success on create a binary search tree")
 	}
 }
 
-func TestInsert(t *testing.T) {
+func TestInsertBst(t *testing.T) {
 	bst := BST.CreateTree()
-	values := []int{10, 5, 12, 11, 15, 4, 9}
 
-	for _, v := range values {
-		bst.Insert(v)
+	bst.Insert(10)
+	bst.Insert(15)
+	bst.Insert(8)
+
+	if bst.GetRoot().Key != 10 {
+		t.Error("Expected:", 10, "Got:", bst.GetRoot().Key)
 	}
 
-	result, _ := bst.Find(11)
-
-	if result.Key != 11 {
-		t.Error("Expected:", 11, "Got:", result.Key)
-	} else {
-		t.Log("Success on insert values")
-	}
-}
-
-func TestDelte(t *testing.T) {
-	bst := BST.CreateTree()
-	values := []int{10, 5, 12, 11, 15, 4, 9}
-
-	for _, v := range values {
-		bst.Insert(v)
+	if bst.GetLength() != 3 {
+		t.Error("Expected:", 3, "Got:", bst.GetLength())
 	}
 }
