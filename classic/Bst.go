@@ -1,81 +1,93 @@
 package classic
 
-import (
-	"errors"
-	"fmt"
-)
+import "fmt"
 
-type Node_Tree struct {
+type vertice struct {
 	Key   int
-	left  *Node_Tree
-	right *Node_Tree
+	left  *vertice
+	right *vertice
 }
 
 type Tree struct {
-	Root   *Node_Tree
+	root   *vertice
 	length int
 }
 
 func CreateTree() *Tree {
-	return &Tree{Root: nil, length: 0}
+	return &Tree{root: nil, length: 0}
 }
 
-func (tree *Tree) InOrder(node *Node_Tree) {
-	if node != nil {
-		tree.InOrder(node.left)
-		fmt.Println(node.Key)
-		tree.InOrder(node.right)
-	}
-
+func (t *Tree) GetLength() int {
+	return t.length
 }
 
-func (tree *Tree) findRecTree(node *Node_Tree, key int) *Node_Tree {
-	if node == nil || node.Key == key {
-		return node
-	}
-
-	if node.Key < key {
-		return tree.findRecTree(node.right, key)
-	}
-	return tree.findRecTree(node.left, key)
-
+func (t *Tree) GetRoot() *vertice {
+	return t.root
 }
 
-func (tree *Tree) Find(key int) (*Node_Tree, error) {
-	if tree.Root == nil {
-		return nil, errors.New("tree is empty")
+func inOrderRec(u *vertice) {
+	if u.left != nil {
+		inOrderRec(u.left)
 	}
-
-	response := tree.findRecTree(tree.Root, key)
-	if response == nil {
-		return nil, errors.New(fmt.Sprint("Impossible to find", key))
-	} else {
-		return response, nil
+	fmt.Println(u.Key)
+	if u.right != nil {
+		inOrderRec(u.right)
 	}
 }
 
-func (tree *Tree) insertRecTree(root, node *Node_Tree) {
-	if node.Key < root.Key {
+func preOrderRec(u *vertice) {
+	fmt.Println(u.Key)
+	if u.left != nil {
+		preOrderRec(u.left)
+	}
+	if u.right != nil {
+		preOrderRec(u.right)
+	}
+}
+
+func postOrderRec(u *vertice) {
+	if u.left != nil {
+		postOrderRec(u.left)
+	}
+	if u.right != nil {
+		postOrderRec(u.right)
+	}
+	fmt.Println(u.Key)
+}
+
+func (t *Tree) Inorder() {
+	inOrderRec(t.root)
+}
+
+func (t *Tree) Preorder() {
+	preOrderRec(t.root)
+}
+func (t *Tree) Postorder() {
+	postOrderRec(t.root)
+}
+
+func (t *Tree) insertRec(root, u *vertice) {
+	if u.Key < root.Key {
 		if root.left == nil {
-			root.left = node
+			root.left = u
 		} else {
-			tree.insertRecTree(root.left, node)
+			t.insertRec(root.left, u)
 		}
 	} else {
 		if root.right == nil {
-			root.right = node
+			root.right = u
 		} else {
-			tree.insertRecTree(root.right, node)
+			t.insertRec(root.right, u)
 		}
 	}
 }
 
-func (tree *Tree) Insert(key int) {
-	node := &Node_Tree{Key: key, left: nil, right: nil}
-	if tree.Root == nil {
-		tree.Root = node
+func (t *Tree) Insert(key int) {
+	u := &vertice{Key: key, left: nil, right: nil}
+	if t.root == nil {
+		t.root = u
 	} else {
-		tree.insertRecTree(tree.Root, node)
+		t.insertRec(t.root, u)
 	}
-	tree.length += 1
+	t.length += 1
 }
