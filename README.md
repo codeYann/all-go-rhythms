@@ -29,8 +29,10 @@ O projeto consiste em um grande "banco de dados" de implementações de algoritm
 | Nome                                                                                             | Status |
 | ------------------------------------------------------------------------------------------------ | ------ |
 | [Insertion Sort](https://github.com/codeYann/all-go-rhythms/blob/main/sorting/Insertion-sort.go) | Ok     |
-| [Bubble Sort](https://github.com/codeYann/all-go-rhythms/blob/main/sorting/BubbleSort.go)        | Ok     |
+| [Bubble Sort](https://github.com/codeYann/all-go-rhythms/blob/main/sorting/Bubble-sort.go)       | Ok     |
 | [Counting Sort](https://github.com/codeYann/all-go-rhythms/blob/main/sorting/Counting-sort.go)   | Ok     |
+| [Merge Sort](https://github.com/codeYann/all-go-rhythms/blob/main/sorting/Merge-sort.go)         | Ok     |
+| [Quick Sort](https://github.com/codeYann/all-go-rhythms/blob/main/sorting/Quick-sort.go)         | Ok     |
 
 ## License
 
