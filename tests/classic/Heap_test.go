@@ -50,11 +50,11 @@ func TestInsertMaxDownPop(t *testing.T) {
 	}
 }
 
-func TestHeapify(t *testing.T) {
-	list := []int{4, 7, 3, 10, 2, 15, 1, 9, 6}
-	nList := H.Heapify(list)
+// func TestHeapify(t *testing.T) {
+// list := []int{4, 7, 3, 10, 2, 15, 1, 9, 6}
+// nList := H.Heapify(list)
 
-	if nList[1] != 15 {
-		t.Error("Expected:", 15, "Got:", nList[1])
-	}
-}
+// if nList[1] != 15 {
+// t.Error("Expected:", 15, "Got:", nList[1])
+// }
+// }
