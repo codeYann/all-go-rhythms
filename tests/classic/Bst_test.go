@@ -47,7 +47,7 @@ func TestHeight(t *testing.T) {
 
 	height := bst.Height()
 
-	if height != 4 {
-		t.Error("Expected:", 4, "Got:", height)
+	if height != 5 {
+		t.Error("Expected:", 5, "Got:", height)
 	}
 }
