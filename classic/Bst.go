@@ -68,7 +68,7 @@ func (t *Tree) Postorder() {
 
 func heightRec(node *vertice) int {
 	if node == nil {
-		return -1
+		return 0
 	} else {
 		var left int = heightRec(node.left)
 		var right int = heightRec(node.right)
@@ -82,8 +82,7 @@ func heightRec(node *vertice) int {
 }
 
 func (t *Tree) Height() int {
-	v := heightRec(t.root)
-	return v
+	return heightRec(t.root)
 }
 
 func (t *Tree) insertRec(root, u *vertice) {
@@ -110,4 +109,36 @@ func (t *Tree) Insert(key int) {
 		t.insertRec(t.root, u)
 	}
 	t.length += 1
+}
+
+func removeRec(root *vertice, key int) *vertice {
+	if root == nil {
+		return nil
+	}
+
+	if key < root.Key {
+		root.left = removeRec(root.left, key)
+	} else if key > root.Key {
+		root.right = removeRec(root.right, key)
+	} else {
+		if root.left == nil && root.right != nil {
+			root = root.right
+			root.right = nil
+			return root
+		} else if root.left != nil && root.right == nil {
+			root = root.left
+			root.left = nil
+			return root
+		} else {
+			root = nil
+			return root
+		}
+
+	}
+	return root
+}
+
+func (t *Tree) Remove(key int) {
+
+
 }
